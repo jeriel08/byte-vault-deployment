@@ -1,0 +1,42 @@
+:root {
+    --color-1: #eae4da;
+    --color-2: #2a5055;
+    --color-3: #828e84;
+    --color-4: #eed6ce;
+    --color-5: #d49066;
+    --color-6: #faf8f5;
+}
+
+.inventory-table {
+    background-color: var(
+        --color-6
+    ) !important; /* Off-white table background */
+    border-color: var(--color-3) !important; /* Muted green-gray borders */
+}
+
+.inventory-table-header {
+    background-color: var(--color-2) !important; /* Dark teal header */
+}
+
+.inventory-table-header th {
+    border-color: var(
+        --color-3
+    ) !important; /* Muted green-gray header borders */
+    color: var(--color-2) !important; /* Dark teal text */
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+.inventory-table-body {
+    background-color: var(--color-1) !important; /* Light beige body */
+}
+
+.inventory-table-row td {
+    border-color: var(--color-3) !important; /* Muted green-gray cell borders */
+    color: var(--color-2) !important; /* Dark teal text */
+}
+
+.inventory-table-row:hover {
+    background-color: var(--color-4) !important; /* Soft peach on hover */
+    color: var(--color-2) !important; /* Dark teal text on hover */
+}

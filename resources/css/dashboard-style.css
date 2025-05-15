@@ -1,0 +1,81 @@
+/* dashboard-style.css */
+
+/* Dashboard-Specific Styling */
+.dashboard-container {
+    max-width: 1500px; /* Reduced from 900px for a more compact middle */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px; /* Increased from 100px for bigger side space */
+    padding-right: 10px; /* Increased from 100px for bigger side space */
+    color: #2a5055; /* Moved from Blade, applies to container and children */
+}
+
+.dashboard-container .card-title,
+.dashboard-container .card-body,
+.dashboard-container h3,
+.dashboard-container p,
+.logged-in-message {
+    color: #2a5055; /* Moved from Blade, specific elements */
+}
+
+/* Margin and Button-Like Styling for "You're logged in!" */
+.logged-in-message {
+    margin-top: 1px; /* Reduced top margin */
+    margin-bottom: 30px; /* Existing bottom margin */
+    background-color: #2a5055; /* Button-like background */
+    color: #ffffff; /* White text for contrast */
+    padding: 0.5rem 1rem; /* Button-like padding */
+    border-radius: 0.25rem; /* Rounded corners like a button */
+    display: inline-block; /* Keeps it from stretching full width */
+    font-weight: 600; /* Matches fw-semibold for consistency */
+}
+
+/* Responsive Adjustments for Dashboard */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding-left: 30px; /* Slightly increased from 20px for mobile */
+        padding-right: 30px;
+    }
+}
+
+/* Icon Styling for Summary Cards */
+.icon-summary {
+    font-size: 48px;
+}
+
+.icon-summary.total-sales {
+    color: #4bc0c0;
+}
+
+.icon-summary.total-orders {
+    color: #36a2eb;
+}
+
+.icon-summary.products-in-stock {
+    color: #ffce56;
+}
+
+.icon-summary.low-stock {
+    color: #ff6384;
+}
+
+/* Icon Styling for Section Titles */
+.icon-title {
+    font-size: 24px;
+}
+
+.icon-title.category-distribution {
+    color: #4bc0c0;
+}
+
+.icon-title.sales-overview {
+    color: #36a2eb;
+}
+
+.icon-title.sales-by-category {
+    color: #ffce56;
+}
+
+.icon-title.top-sales {
+    color: #ff6384;
+}

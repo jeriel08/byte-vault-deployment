@@ -1,0 +1,695 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "simplebar/dist/simplebar.min.css";
+
+:root {
+    --color-1: #eae4da;
+    --color-2: #2a5055;
+    --color-3: #828e84;
+    --color-4: #eed6ce;
+    --color-5: #d49066;
+    --color-6: #faf8f5;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    color: var(--color-2);
+}
+
+body {
+    background-color: var(--color-4) !important;
+}
+
+main {
+    padding-top: 7em;
+    padding-bottom: 3.5em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h5,
+h2 {
+    color: var(--color-2) !important;
+}
+
+.primary-button {
+    /* Base styles */
+    background-color: var(--color-2); /* Dark teal background */
+    color: var(--color-1); /* Light beige text */
+    border: 1px solid var(--color-3); /* Subtle muted green-gray border */
+    padding: 0.5rem 1rem; /* Comfortable padding */
+    font-size: 1rem; /* Standard text size */
+    font-weight: 500; /* Slightly bold for emphasis */
+    border-radius: 0.5em; /* Rounded corners (6px) */
+    cursor: pointer; /* Hand cursor on hover */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover state */
+.primary-button:hover {
+    background-color: var(--color-5); /* Warm orange on hover */
+    color: var(--color-2); /* Dark teal text for contrast */
+    border-color: var(--color-5); /* Match border to background */
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3); /* Solid southeast shadow */
+    transform: translate(
+        -2px,
+        -2px
+    ); /* Optional: Slight movement for a pressed effect */
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Active state (when clicked) */
+.primary-button:active {
+    background-color: var(--color-4); /* Soft peach for a pressed effect */
+    border-color: var(--color-3); /* Keep the muted border */
+}
+
+/* Disabled state */
+.primary-button:disabled {
+    background-color: var(--color-3); /* Muted green-gray */
+    color: var(--color-4); /* Soft peach text */
+    border-color: var(--color-3);
+    cursor: not-allowed; /* Disabled cursor */
+    opacity: 0.7; /* Slightly faded */
+}
+
+.primary-button .material-icons-outlined,
+.primary-button i {
+    color: inherit !important;
+}
+
+.secondary-button {
+    /* Base styles */
+    background-color: var(--color-1); /* Light beige background */
+    color: var(--color-2); /* Dark teal text for contrast */
+    border: 1px solid var(--color-3); /* Subtle muted green-gray border */
+    padding: 0.5rem 1rem; /* Same padding as primary */
+    font-size: 1rem; /* Standard text size */
+    font-weight: 500; /* Slightly bold */
+    border-radius: 0.5em; /* Rounded corners (6px) */
+    cursor: pointer; /* Hand cursor on hover */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Ensure all children (including <span>) inherit the color */
+.secondary-button span,
+.secondary-button .material-icons-outlined {
+    color: inherit; /* Matches primary-button behavior */
+}
+
+/* Hover state */
+.secondary-button:hover {
+    background-color: var(--color-6); /* Off-white for a subtle lift */
+    color: var(--color-5); /* Warm orange text for contrast */
+    border-color: var(--color-5); /* Warm orange border */
+}
+
+/* Active state (when clicked) */
+.secondary-button:active {
+    background-color: var(--color-4); /* Soft peach for pressed effect */
+    color: var(--color-2); /* Dark teal text */
+    border-color: var(--color-3); /* Muted green-gray border */
+}
+
+/* Disabled state */
+.secondary-button:disabled {
+    background-color: var(--color-3); /* Muted green-gray */
+    color: var(--color-1); /* Light beige text */
+    border-color: var(--color-3); /* Same as background */
+    cursor: not-allowed; /* Disabled cursor */
+    opacity: 0.7; /* Slightly faded */
+}
+
+.danger-button {
+    background-color: hsl(0, 100%, 40%); /* Warm orange */
+    color: var(--color-6); /* Off-white */
+    border: 1px solid red;
+    padding: 0.5rem 1rem; /* Same padding as primary */
+    font-weight: 500;
+    border-radius: 0.5em; /* Rounded corners (6px) */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.danger-button:hover {
+    background-color: hsl(0, 100%, 50%);
+    color: var(--color-6);
+}
+
+.danger-button span,
+.danger-button .material-icons-outlined {
+    color: inherit; /* Matches primary-button behavior */
+}
+
+.danger-button:focus {
+    background-color: red;
+    color: var(--color-6);
+    box-shadow: 0 0 0 0.15rem hsla(0, 100%, 50%, 0.501); /* Dark teal shadow */
+}
+
+.danger-button:active {
+    background-color: hsla(0, 100%, 50%, 0.501); /* Muted green-gray */
+    color: var(--color-6);
+}
+
+.danger-button:disabled {
+    background-color: hsla(0, 100%, 50%, 0.501);
+    color: var(--color-6);
+    opacity: 0.65;
+}
+
+/* ============================ Form Styling ============================ */
+
+/* Override Bootstrap's form-control */
+.form-control {
+    background-color: var(--color-1) !important;
+    color: var(--color-2) !important;
+    border: 2px solid var(--color-3) !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 0.5em !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Focus state */
+.form-control:focus {
+    background-color: var(--color-4) !important;
+    color: var(--color-2) !important;
+    border-color: var(--color-5) !important;
+    box-shadow: 0 0 0 0.2rem rgba(212, 144, 102, 0.25) !important;
+    outline: none !important;
+}
+
+/* Placeholder text */
+.form-control::placeholder {
+    color: var(--color-3) !important;
+    opacity: 0.8 !important;
+}
+
+/* Disabled state */
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: var(--color-3) !important;
+    color: var(--color-4) !important;
+    border-color: var(--color-3) !important;
+    opacity: 0.7 !important;
+}
+
+/* Override Bootstrap's form-check-input */
+.form-check-input {
+    background-color: var(--color-1);
+    border: 2px solid var(--color-3);
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Checked state */
+.form-check-input:checked {
+    background-color: var(--color-2);
+    border-color: var(--color-2);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23eae4da' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+/* Focus state */
+.form-check-input:focus {
+    border-color: var(--color-5);
+    box-shadow: 0 0 0 0.2rem rgba(212, 144, 102, 0.25);
+    outline: none;
+}
+
+/* Disabled state */
+.form-check-input:disabled {
+    background-color: var(--color-3);
+    border-color: var(--color-3);
+    opacity: 0.7;
+}
+
+/* Disabled and checked */
+.form-check-input:disabled:checked {
+    background-color: var(--color-3);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23eed6ce' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+/* ============================ Navigation Styling ============================ */
+nav.navbar {
+    background-color: var(--color-2) !important;
+    color: var(--color-1) !important;
+    overflow: visible !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12) !important;
+}
+
+.navbar-brand {
+    font-size: 1.8em !important;
+    color: var(--color-1) !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.navbar .navbar-toggler .navbar-icon {
+    color: var(--color-1) !important;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-toggler:hover .navbar-icon {
+    color: var(--color-5) !important;
+}
+
+/* Account Section Styling */
+.navbar .d-flex.align-items-center.me-5.ms-auto {
+    color: var(--color-1) !important;
+}
+
+.navbar .d-flex.align-items-center.me-5.ms-auto p {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.navbar .d-flex.align-items-center.me-5.ms-auto small {
+    color: var(--color-3) !important;
+    font-size: 0.9em;
+}
+
+.navbar .btn.border-0.bg-transparent.p-0.ms-2 .material-icons-outlined {
+    color: var(--color-1) !important;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.navbar .btn.border-0.bg-transparent.p-0.ms-2:hover .material-icons-outlined {
+    color: var(--color-5) !important;
+}
+
+/* Dropdown Menu Styling */
+.navbar .dropdown-menu {
+    position: absolute !important;
+    top: 100%;
+    right: 0;
+    width: 12rem;
+    z-index: 1000;
+    background-color: var(--color-6) !important;
+    border: 2px solid var(--color-5) !important;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .dropdown-item {
+    color: var(--color-2) !important;
+    font-size: 0.95em;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--color-5) !important;
+    color: var(--color-6) !important;
+}
+
+.navbar .dropdown-item span {
+    color: inherit !important;
+}
+
+.navbar .text-dark {
+    color: var(--color-1) !important;
+}
+
+.navbar .text-muted {
+    color: var(--color-4) !important;
+}
+
+/* Offcanvas Styling */
+.offcanvas {
+    background-color: var(--color-2) !important;
+    color: var(--color-4) !important;
+}
+
+.offcanvas-body::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, and other WebKit browsers */
+}
+
+.offcanvas-body {
+    overflow: auto !important;
+    height: 100% !important;
+}
+
+.offcanvas .offcanvas-body a.nav-link {
+    color: var(--color-1) !important;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.offcanvas .offcanvas-body a.nav-link span {
+    color: inherit !important;
+}
+
+.offcanvas .offcanvas-body .nav-link {
+    background-color: transparent;
+    border-radius: 0.5em;
+    margin: 0.5em 0;
+    padding: 0.75em 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.offcanvas .offcanvas-body a.nav-link:hover {
+    background-color: var(--color-5) !important;
+    color: var(--color-6) !important;
+}
+
+/* Active state */
+.offcanvas .offcanvas-body a.nav-link.active {
+    color: var(--color-2) !important; /* #2a5055 - Dark teal for readability */
+    background-color: var(--color-4); /* #eed6ce - Light peach for contrast */
+}
+
+.offcanvas .offcanvas-header .nav-icon {
+    font-size: 4rem;
+}
+
+.offcanvas hr {
+    border-color: var(--color-1) !important;
+}
+
+.offcanvas .text-muted {
+    color: var(--color-1) !important;
+}
+
+/* ============================ Account Settings Styling ============================ */
+.account-settings-card {
+    background-color: var(--color-6) !important;
+    border: 2px var(--color-2) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toast {
+    margin-top: 5.5em !important;
+}
+
+.toast-body {
+    color: var(--color-1) !important;
+}
+
+/* ============================ Supplier Styling ============================ */
+.supplier-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid var(--color-2); /* 2px border with a default black color */
+}
+
+/* Wrapper for positioning */
+.file-upload-wrapper {
+    position: relative;
+    display: inline-block; /* Keeps it inline with other elements */
+}
+
+/* Hide the default file input */
+.file-input {
+    display: none; /* Completely hide the input */
+}
+
+/* Style the file button */
+.file-button {
+    /* Base styles inspired by .form-control and .primary-button */
+    background-color: var(
+        --color-1
+    ); /* Light beige background, like form-control */
+    color: var(--color-2); /* Dark teal text, like form-control */
+    border: 2px solid var(--color-3); /* Muted green-gray border, like form-control */
+    padding: 0.5rem 1rem; /* Matches form-control padding */
+    font-size: 1rem; /* Matches form-control font size */
+    font-weight: 500; /* Slightly bold, like primary-button */
+    border-radius: 0.5em; /* Matches both (6px) */
+    cursor: pointer; /* Hand cursor, like primary-button */
+    transition: all 0.2s ease-in-out; /* Smooth transitions, like both */
+    display: inline-flex; /* Aligns icon and text nicely */
+    align-items: center; /* Vertically centers content */
+    gap: 0.5rem; /* Space between icon and text */
+    text-decoration: none; /* No underline */
+}
+
+/* Hover state */
+.file-button:hover {
+    background-color: var(
+        --color-5
+    ); /* Warm orange, like primary-button hover */
+    color: var(--color-2); /* Dark teal text for contrast */
+    border-color: var(--color-5); /* Match border to background */
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3); /* Solid shadow, like primary-button */
+    transform: translate(-2px, -2px); /* Slight movement, like primary-button */
+}
+
+/* Active state (when clicked) */
+.file-button:active {
+    background-color: var(
+        --color-4
+    ); /* Soft peach, like primary-button active */
+    border-color: var(--color-3); /* Keep muted border */
+    box-shadow: none; /* Remove shadow when pressed */
+    transform: translate(0, 0); /* Reset movement */
+}
+
+/* Ensure the icon inherits the text color */
+.file-button .material-icons-outlined {
+    color: inherit !important;
+}
+
+.file-name {
+    margin-left: 1rem;
+    color: var(--color-2);
+    font-size: 1rem;
+}
+
+.modal .modal-content {
+    border-radius: 0.5em !important;
+    border: 1px solid var(--color-3) !important;
+    background-color: var(--color-6) !important;
+}
+
+/* ============ Supplier Order Styling ================= */
+.supplier-order-dropdown .dropdown-toggle {
+    background-color: var(--color-2);
+    color: var(--color-6);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.supplier-order-dropdown .dropdown-toggle:hover,
+.supplier-order-dropdown .dropdown-toggle:focus {
+    background-color: var(--color-5);
+    color: var(--color-6);
+}
+
+.supplier-order-dropdown .dropdown-menu {
+    background-color: var(--color-6);
+    border: 1px solid var(--color-5);
+    border-radius: 0.5em;
+}
+
+.supplier-order-dropdown .dropdown-item {
+    color: var(--color-2);
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.supplier-order-dropdown .dropdown-item:hover,
+.supplier-order-dropdown .dropdown-item:focus {
+    background-color: var(--color-5);
+    color: var(--color-6);
+}
+
+.supplier-order-dropdown .dropdown-item span {
+    color: inherit !important;
+}
+
+.supplier-order-dropdown .dropdown-item:active {
+    background-color: var(--color-5);
+    color: var(--color-6);
+}
+
+/* =============================
+   Custom Styling for Select2
+   ============================= */
+
+/* Main selection box */
+.custom-select2 + .select2-container--bootstrap-5 .select2-selection--single {
+    height: auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--color-2);
+    background-color: var(--color-6);
+    border: 1px solid var(--color-3);
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100% !important;
+}
+
+.select2-container {
+    flex: 1 1 auto !important;
+}
+
+/* Inner input text when selected */
+.custom-select2 + .select2-container--bootstrap-5 .select2-selection__rendered {
+    color: var(--color-2);
+    line-height: 1.5;
+    font-weight: 500;
+    margin-left: 1em;
+}
+
+/* Arrow icon inside select */
+.custom-select2 + .select2-container--bootstrap-5 .select2-selection__arrow {
+    height: 100% !important;
+    right: 1rem !important;
+    display: none !important;
+}
+
+/* Shadow and border on focus/open */
+.custom-select2
+    + .select2-container--bootstrap-5.select2-container--open
+    .select2-selection--single {
+    border-color: var(--color-5);
+    box-shadow: 0 0 0 3px rgba(212, 144, 102, 0.3);
+}
+
+/* =============================
+   Dropdown List Styling
+   ============================= */
+
+/* Full dropdown */
+.select2-container--bootstrap-5 .select2-dropdown {
+    background-color: var(--color-6);
+    border: 1px solid var(--color-3);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden !important;
+}
+
+/* Each option in dropdown */
+.select2-container--bootstrap-5 .select2-results__option {
+    padding: 0.5rem 1rem;
+    color: var(--color-2);
+    background-color: var(--color-6);
+    transition: background-color 0.2s ease;
+}
+
+/* Hovered option */
+.select2-container--bootstrap-5 .select2-results__option--highlighted {
+    background-color: var(--color-4);
+    color: var(--color-2);
+}
+
+/* Selected option in dropdown */
+.select2-container--bootstrap-5 .select2-results__option--selected {
+    background-color: var(--color-5);
+    color: white;
+}
+
+/* Disabled option */
+.select2-container--bootstrap-5 .select2-results__option[aria-disabled="true"] {
+    color: var(--color-3);
+    cursor: not-allowed;
+}
+
+/* Hide the clear (X) icon */
+.custom-select2 + .select2-container--bootstrap-5 .select2-selection__clear {
+    display: none !important;
+}
+
+/* Style the inner search input inside the dropdown */
+.select2-container--bootstrap-5
+    .select2-search--dropdown
+    .select2-search__field {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--color-2);
+    background-color: var(--color-6);
+    border: 1px solid var(--color-3);
+    border-radius: 0.5rem;
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Remove blue shadow and apply custom glow on focus */
+.select2-container--bootstrap-5
+    .select2-dropdown
+    .select2-search--dropdown
+    .select2-search__field:focus {
+    border-color: var(--color-5);
+    box-shadow: 0 0 0 3px rgba(212, 144, 102, 0.3);
+    outline: none;
+}
+
+/* Fix focus style when Select2 closes after selecting an option */
+.custom-select2
+    + .select2-container--bootstrap-5
+    .select2-selection--single:focus,
+.custom-select2
+    + .select2-container--bootstrap-5.select2-container--focus
+    .select2-selection--single {
+    border-color: var(--color-5) !important;
+    box-shadow: 0 0 0 3px rgba(212, 144, 102, 0.3) !important;
+    outline: none !important;
+}
+
+/* Option styling for all states */
+.select2-container--bootstrap-5 .select2-results__option {
+    padding: 0.5rem 1rem !important;
+    background-color: var(--color-6) !important;
+    color: var(--color-2) !important;
+    transition: background-color 0.2s ease !important;
+}
+
+/* Hovered option */
+.select2-container--bootstrap-5 .select2-results__option--highlighted {
+    background-color: var(--color-4) !important;
+    color: var(--color-2) !important;
+}
+
+/* Selected option */
+.select2-container--bootstrap-5 .select2-results__option--selected {
+    background-color: var(--color-5) !important;
+    color: white !important;
+}
+
+/* Disabled option */
+.select2-container--bootstrap-5 .select2-results__option[aria-disabled="true"] {
+    color: var(--color-3) !important;
+    cursor: not-allowed !important;
+}
+
+.simplebar-scrollbar::before {
+    background-color: var(--color-1); /* Laravel blue */
+    border-radius: 4px;
+}
+
+/* .simplebar-track.simplebar-vertical {
+    background-color: #f8fafc;
+    width: 10px;
+} */
+
+.simplebar-scrollbar.simplebar-visible::before {
+    opacity: 0.8; /* Adjust opacity */
+}
+
+/* ===================== Fixed Badge Styling ===================== */
+.fixed-badge {
+    min-width: 80px; /* Adjust as needed */
+    text-align: center;
+    padding: 0.25rem 0.5rem; /* Consistent padding */
+}
+
+/* ===================== Inventory Report Card Styling ===================== */
+.inventory-report-card {
+    border: 1px solid var(--color-3) !important;
+}

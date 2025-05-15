@@ -1,0 +1,180 @@
+:root {
+    --color-1: #eae4da;
+    --color-2: #2a5055;
+    --color-3: #828e84;
+    --color-4: #eed6ce;
+    --color-5: #d49066;
+    --color-6: #faf8f5;
+}
+
+.custom-table {
+    color: var(--color-2); /* Dark teal text */
+    background-color: var(--color-6) !important; /* Off-white background */
+}
+
+/* Header cells */
+.custom-table thead th {
+    border-bottom: 2px solid var(--color-3);
+    color: var(--color-2) !important;
+    background-color: inherit !important;
+}
+
+/* Body rows */
+.custom-table tbody td {
+    border-bottom: 1px solid var(--color-3);
+    background-color: var(--color-6); /* Set default to off-white */
+    transition: background-color 0.3s ease; /* Add transition */
+}
+
+/* Hover effect for rows */
+.custom-table.table-hover tbody tr:hover {
+    background-color: var(--color-4) !important; /* Soft peach on hover */
+    color: var(--color-2);
+}
+
+/* Table group divider */
+.custom-table .table-group-divider {
+    border-top: 2px solid var(--color-3);
+}
+
+/* Form controls */
+.custom-table .form-control,
+.custom-table .form-select {
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border: 1px solid var(--color-3);
+}
+
+.custom-table .form-control:focus,
+.custom-table .form-select:focus {
+    border-color: var(--color-5);
+    box-shadow: 0 0 0 0.2rem rgba(212, 144, 102, 0.25);
+}
+
+.account-manager-card {
+    background-color: var(--color-6) !important;
+    border: 1px solid var(--color-3) !important;
+    border-radius: 0.5em !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the dropdown */
+.form-select {
+    width: 100%;
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem;
+    color: var(--color-2); /* Dark text color */
+    background-color: var(--color-6); /* Light background */
+    border: 1px solid var(--color-3); /* Secondary color for border */
+    border-radius: 0.5rem;
+    appearance: none; /* Remove default arrow */
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and focus states */
+.form-select:hover,
+.form-select:focus {
+    border-color: var(--color-5); /* Highlight color for border */
+    box-shadow: 0 0 0 3px rgba(212, 144, 102, 0.2); /* Subtle glow */
+    outline: none;
+}
+
+/* Style for dropdown arrow */
+.form-select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232a5055' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+}
+
+/* Style for dropdown options */
+.form-select option {
+    background-color: var(--color-6); /* Light background */
+    color: var(--color-2); /* Dark text color */
+}
+
+/* Style for selected option */
+.form-select option:checked {
+    background-color: var(--color-4); /* Accent color for selected option */
+    color: var(--color-2); /* Dark text color */
+}
+
+/* ========================== Cateogry Accordion Styling ========================== */
+.category-accordion .accordion-item {
+    background-color: var(--color-6); /* Matches account-manager-card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Matches card shadow */
+    margin-bottom: 10px; /* Spacing between items */
+    border-radius: 8px; /* Rounded corners for the item */
+    overflow: hidden; /* Ensure child elements respect the border radius */
+}
+
+.category-accordion .accordion-button {
+    background-color: var(--color-6); /* Light beige for header */
+    color: var(--color-2); /* Dark teal text */
+    border-radius: 8px 8px 0 0; /* Rounded top corners for the button */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-accordion .accordion-body {
+    padding: 20px; /* More padding for content */
+    font-size: 1rem; /* Consistent font size */
+    line-height: 1.6; /* Improve line spacing */
+}
+
+.category-accordion .accordion-button.collapsed {
+    border-radius: 8px; /* Fully rounded corners when collapsed */
+}
+
+.category-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--color-2); /* Dark teal when expanded */
+    color: var(--color-1) !important; /* Light beige text */
+}
+
+.category-accordion .accordion-body {
+    background-color: #f3ede5; /* Off-white for content */
+    padding: 15px;
+}
+
+.category-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232a5055'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    transition: transform 0.3s ease, background-image 0.3s ease;
+}
+
+.category-accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d49066'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); /* Warm orange arrow when expanded */
+    transform: rotate(180deg); /* Rotate the icon 180 degrees */
+}
+
+.category-accordion .accordion-button:hover {
+    background-color: #f5f0e8; /* Slightly darker than --color-6 */
+    color: var(--color-2); /* Dark teal text on hover */
+}
+
+/* Ensure the text color changes when the accordion is expanded */
+.category-accordion .accordion-button:not(.collapsed) h5,
+.category-accordion .accordion-button:not(.collapsed) p,
+.category-accordion .accordion-button:not(.collapsed) span {
+    color: var(--color-1) !important; /* Light beige text */
+}
+
+/* Hover state when accordion is open */
+.category-accordion .accordion-button:not(.collapsed):hover h5,
+.category-accordion .accordion-button:not(.collapsed):hover p,
+.category-accordion .accordion-button:not(.collapsed):hover span {
+    color: var(--color-2) !important; /* Dark teal text on hover */
+}
+
+.category-accordion .accordion-button:not(.collapsed):hover .badge {
+    color: #ffff !important; /* Accent color for hover */
+}
+
+/* Default state for the icon */
+.category-accordion .accordion-icon {
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+/* Rotate the icon when the accordion is expanded */
+.category-accordion .accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(-180deg); /* Rotate 180 degrees */
+}

@@ -1,0 +1,353 @@
+:root {
+    --color-1: #eae4da; /* Light beige */
+    --color-2: #2a5055; /* Dark teal */
+    --color-3: #828e84; /* Gray-green */
+    --color-4: #eed6ce; /* Light peach */
+    --color-5: #d49066; /* Warm orange */
+    --color-6: #faf8f5; /* Off-white */
+}
+
+/* Search Input */
+.search-input {
+    background-color: var(--color-1); /* Light beige background */
+    color: var(--color-2); /* Dark teal text */
+    border: 2px solid var(--color-3); /* Gray-green border */
+    padding: 0.5rem 1rem; /* Consistent padding */
+    font-size: 1rem; /* Standard size */
+    border-radius: 0.5em 0 0 0.5em; /* Rounded left corners, flat right */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    border-right: none; /* Seamless with button */
+}
+
+.search-input:focus {
+    background-color: var(--color-4); /* Light peach on focus */
+    color: var(--color-2);
+    border-color: var(--color-5); /* Warm orange border */
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--color-3); /* Gray-green placeholder */
+    opacity: 0.8;
+}
+
+.search-input:disabled,
+.search-input[readonly] {
+    background-color: var(--color-3); /* Gray-green disabled */
+    color: var(--color-4); /* Light peach text */
+    border-color: var(--color-3);
+    opacity: 0.7;
+}
+
+/* Search Button */
+.search-button {
+    background-color: var(--color-1); /* Light beige background */
+    color: var(--color-2); /* Dark teal icon */
+    border: 2px solid var(--color-3); /* Gray-green border */
+    padding: 0.5rem 1rem; /* Match input padding */
+    font-size: 1rem;
+    border-radius: 0 0.5em 0.5em 0; /* Rounded right corners, flat left */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-left: none; /* Seamless with input */
+}
+
+.search-button span,
+.search-button .material-icons-outlined {
+    color: inherit; /* Inherits dark teal */
+}
+
+.search-button:hover {
+    background-color: var(--color-6); /* Off-white on hover */
+    color: var(--color-5); /* Warm orange icon */
+    border-color: var(--color-5); /* Warm orange border */
+}
+
+.search-button:active {
+    background-color: var(--color-4); /* Light peach when clicked */
+    color: var(--color-2); /* Dark teal icon */
+    border-color: var(--color-3); /* Gray-green border */
+}
+
+.search-button:disabled {
+    background-color: var(--color-3); /* Gray-green disabled */
+    color: var(--color-1); /* Light beige icon */
+    border-color: var(--color-3);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Ensure input-group alignment */
+.input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%; /* Ensures it fills the col-9 */
+}
+
+/* =================== Filter Panel Styling =================== */
+
+/* Custom CSS for the filter-panel card */
+.filter-panel {
+    background-color: var(--color-6); /* Off-white background */
+    border: 1px solid var(--color-3); /* Gray-green border */
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-panel .card-body {
+    padding: 1.5rem;
+}
+
+.filter-panel h5 {
+    color: var(--color-2); /* Dark teal for the heading */
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-panel label {
+    color: var(--color-2); /* Dark teal for labels */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.filter-panel .btn-group .btn {
+    border-color: var(--color-3); /* Gray-green border for buttons */
+    color: var(--color-2); /* Dark teal text */
+    background-color: var(--color-6); /* Off-white background */
+    transition: all 0.3s ease;
+}
+
+.filter-panel .btn-group .btn:hover {
+    background-color: var(--color-4); /* Light peach on hover */
+    border-color: var(--color-5); /* Warm orange border on hover */
+    color: var(--color-2); /* Dark teal text */
+}
+
+.filter-panel .btn-group .btn .badge {
+    background-color: var(--color-2); /* Dark teal for badges */
+    color: var(--color-6); /* Off-white text */
+}
+
+.filter-panel .form-check-input:checked {
+    background-color: var(--color-5); /* Warm orange for checked checkboxes */
+    border-color: var(--color-5); /* Warm orange border */
+}
+
+.filter-panel .form-check-label {
+    color: var(--color-2); /* Dark teal for labels */
+}
+
+.filter-panel .accordion-button {
+    background-color: var(--color-6) !important; /* Off-white background */
+    color: var(--color-2) !important; /* Dark teal text */
+    border: 1px solid var(--color-3) !important; /* Gray-green border */
+    border-radius: 0.5em 0.5em 0 0 !important; /* Slightly rounded corners */
+    padding: 0.7rem 1rem !important;
+    overflow: hidden;
+}
+
+.filter-panel .accordion-button:focus {
+    outline: var(--color-5) auto 5px; /* Warm orange outline on focus */
+    box-shadow: rgba(212, 144, 102, 0.2) 0 0 0 0.2rem; /* Warm orange shadow with increased opacity on focus */
+}
+
+.filter-panel .accordion-button:not(.collapsed) {
+    background-color: var(--color-4) !important; /* Light peach when expanded */
+    color: var(--color-2) !important; /* Dark teal text */
+}
+
+.filter-panel .accordion-body {
+    background-color: var(--color-6) !important; /* Off-white background */
+    border: 1px solid var(--color-3) !important; /* Gray-green border */
+    border-top: none !important;
+    border-radius: 0 0 0.5em 0.5em !important; /* Slightly rounded corners */
+}
+
+.filter-panel .btn-outline-secondary {
+    border-color: var(--color-3); /* Gray-green border */
+    color: var(--color-2); /* Dark teal text */
+    border-radius: 0.5em; /* Slightly rounded corners */
+    transition: all 0.3s ease;
+}
+
+.filter-panel .btn-outline-secondary:hover {
+    background-color: var(--color-4); /* Light peach on hover */
+    border-color: var(--color-5); /* Warm orange border on hover */
+    color: var(--color-2); /* Dark teal text */
+}
+
+.filter-panel .btn-outline-danger {
+    border-color: var(--color-5); /* Warm orange border */
+    color: var(--color-5); /* Warm orange text */
+}
+
+.filter-panel .btn-outline-danger:hover {
+    background-color: var(--color-5); /* Warm orange on hover */
+    color: var(--color-6); /* Off-white text */
+}
+
+.category-filter-button {
+    background-color: var(--color-6) !important; /* Off-white background */
+    border: 1px solid var(--color-3) !important; /* Gray-green border */
+    color: var(--color-2) !important; /* Dark teal text */
+    font-weight: 500 !important;
+    padding: 0.5rem 1rem !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    border-radius: 0.5em !important; /* Slightly rounded corners */
+}
+
+.category-filter-button:hover {
+    background-color: var(--color-4) !important; /* Light peach on hover */
+    border-color: var(--color-5) !important; /* Warm orange border on hover */
+    color: var(--color-2) !important; /* Dark teal text */
+}
+
+.category-filter-button .badge {
+    background-color: var(--color-2) !important; /* Dark teal for badges */
+    color: var(--color-6) !important; /* Off-white text */
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 12px !important; /* Rounded badges */
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    justify-content: center !important;
+}
+
+/* Specific styles for each button state */
+.category-filter-button:nth-child(1) .badge {
+    background-color: var(--color-2); /* Dark teal for "All" */
+}
+
+.category-filter-button:nth-child(2) .badge {
+    background-color: var(--color-5); /* Warm orange for "Active" */
+}
+
+.category-filter-button:nth-child(3) .badge {
+    background-color: var(--color-5); /* Warm orange for "Inactive" */
+}
+
+.category-filter-button:nth-child(4) .badge {
+    background-color: var(--color-3); /* Gray-green for "Draft" */
+}
+
+.vr {
+    height: 5rem;
+}
+
+.price-section {
+    flex: 0 0 150px; /* Fixed width for the entire price section */
+    justify-content: space-between; /* Optional: distributes space evenly */
+}
+
+.custom-modal-header {
+    background-color: var(--color-1); /* Light beige */
+    border-bottom: 1px solid var(--color-3); /* Gray-green */
+    color: var(--color-2); /* Dark teal for title */
+    padding: 1rem;
+}
+
+.custom-modal-header .modal-title {
+    font-weight: 600;
+}
+
+.custom-modal-header .btn-close {
+    filter: invert(30%) sepia(50%) saturate(500%) hue-rotate(160deg)
+        brightness(50%) contrast(90%);
+    /* Adjusts close button to blend with dark teal */
+}
+
+.custom-modal-body {
+    background-color: var(--color-6); /* Off-white */
+    color: var(--color-3); /* Gray-green for text */
+    padding: 1.5rem;
+}
+
+.custom-modal-body .label {
+    color: var(--color-2); /* Dark teal for labels */
+    font-weight: 500;
+}
+
+.custom-modal-body .value {
+    color: var(--color-3); /* Gray-green for values */
+}
+
+.custom-modal-footer {
+    background-color: var(--color-6); /* Off-white */
+    border-top: 1px solid var(--color-3); /* Gray-green */
+    padding: 1rem;
+}
+
+.custom-btn-close {
+    background-color: var(--color-5); /* Warm orange */
+    color: var(--color-6); /* Off-white text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.custom-btn-close:hover {
+    background-color: var(--color-4); /* Light peach on hover */
+    color: var(--color-2); /* Dark teal text on hover */
+}
+
+.danger-badge {
+    font-size: 14px !important;
+    vertical-align: middle !important;
+    color: #ffff !important;
+}
+
+/* Pagination container */
+.pagination {
+    margin-top: 20px;
+}
+
+/* Default page link styles */
+.page-link {
+    color: var(--color-2); /* Dark teal for text */
+    background-color: var(--color-6); /* Off-white background */
+    border: 1px solid var(--color-3); /* Gray-green border */
+    transition: all 0.3s ease;
+}
+
+/* Hover state */
+.page-link:hover {
+    color: var(--color-5); /* Warm orange on hover */
+    background-color: var(--color-1); /* Light beige background */
+    border-color: var(--color-5); /* Warm orange border */
+}
+
+/* Active state */
+.page-item.active .page-link {
+    color: var(--color-6); /* Off-white text */
+    background-color: var(--color-2); /* Dark teal background */
+    border-color: var(--color-2); /* Dark teal border */
+}
+
+/* Disabled state */
+.page-item.disabled .page-link {
+    color: var(--color-3); /* Gray-green text */
+    background-color: var(--color-4); /* Light peach background */
+    border-color: var(--color-3); /* Gray-green border */
+    opacity: 0.65;
+}
+
+/* Optional: Adjust spacing and size */
+.page-item .page-link {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 4px;
+}
+
+/* Focus styles */
+.page-link:focus {
+    outline: none; /* Remove default browser outline */
+    box-shadow: 0 0 0 0.2rem rgba(210, 144, 102, 0.5); /* Warm orange (--color-5) with transparency */
+}
+
+/* For accessibility: keep focus visible for keyboard navigation */
+.page-link:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(210, 144, 102, 0.5); /* Same as above */
+}

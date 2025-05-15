@@ -1,0 +1,20 @@
+:root {
+    --color-1: #eae4da;
+    --color-2: #2a5055;
+    --color-3: #828e84;
+    --color-4: #eed6ce;
+    --color-5: #d49066;
+}
+
+.main {
+    background-color: var(--color-4);
+}
+
+.left-column {
+    background-color: var(--color-2);
+    color: var(--color-4);
+}
+
+.right-column {
+    color: var(--color-2);
+}

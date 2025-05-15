@@ -1,0 +1,69 @@
+{
+  "_index-D8rVyQy1.js": {
+    "file": "assets/index-D8rVyQy1.js",
+    "name": "index"
+  },
+  "resources/css/account-manager-style.css": {
+    "file": "assets/account-manager-style-JOE8mofF.css",
+    "src": "resources/css/account-manager-style.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-B6OWF_ZT.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/dashboard-style.css": {
+    "file": "assets/dashboard-style-9Eas9Rjq.css",
+    "src": "resources/css/dashboard-style.css",
+    "isEntry": true
+  },
+  "resources/css/inventory-report-style.css": {
+    "file": "assets/inventory-report-style-Dlk1_OU9.css",
+    "src": "resources/css/inventory-report-style.css",
+    "isEntry": true
+  },
+  "resources/css/login-style.css": {
+    "file": "assets/login-style-ClU5QQEn.css",
+    "src": "resources/css/login-style.css",
+    "isEntry": true
+  },
+  "resources/css/orders-style.css": {
+    "file": "assets/orders-style-CEZqY4_2.css",
+    "src": "resources/css/orders-style.css",
+    "isEntry": true
+  },
+  "resources/css/pos-sales-styling.css": {
+    "file": "assets/pos-sales-styling-75ZOcnnN.css",
+    "src": "resources/css/pos-sales-styling.css",
+    "isEntry": true
+  },
+  "resources/css/pos-styling.css": {
+    "file": "assets/pos-styling-LYoUvyFr.css",
+    "src": "resources/css/pos-styling.css",
+    "isEntry": true
+  },
+  "resources/css/product-style.css": {
+    "file": "assets/product-style-hiQyjxHN.css",
+    "src": "resources/css/product-style.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CTLqooA8.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_index-D8rVyQy1.js"
+    ]
+  },
+  "resources/js/bootstrap.js": {
+    "file": "assets/bootstrap-CY0t_SZR.js",
+    "name": "bootstrap",
+    "src": "resources/js/bootstrap.js",
+    "isEntry": true,
+    "imports": [
+      "_index-D8rVyQy1.js"
+    ]
+  }
+}
