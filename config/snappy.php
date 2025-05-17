@@ -37,7 +37,12 @@ return [
         'enabled' => true,
         'binary' => env('WKHTMLTOPDF_PATH', '/usr/local/bin/wkhtmltopdf'),
         'timeout' => false,
-        'options' => ['enable-local-file-access' => true],
+        'options' => [
+            'enable-local-file-access' => true,
+            'page-size' => 'A4',
+            'disable-smart-shrinking' => true,
+            'dpi' => 96,
+        ],
         'env' => [],
     ],
 

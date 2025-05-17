@@ -3,7 +3,7 @@ FROM richarvey/nginx-php-fpm:3.1.6
 USER root
 
 # Increase PHP memory limit
-RUN echo "memory_limit = 256M" > /usr/local/etc/php/conf.d/memory-limit.ini
+RUN echo "memory_limit = 768M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 COPY . .
 
