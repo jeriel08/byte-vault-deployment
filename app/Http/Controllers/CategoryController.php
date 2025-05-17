@@ -29,7 +29,7 @@ class CategoryController extends Controller
         }
 
         // Paginate results
-        $categories = $query->paginate(10);
+        $categories = $query->paginate(5);
 
         // Top-level parents with children (for accordions)
         $parentCategories = $categories->filter(function ($category) {

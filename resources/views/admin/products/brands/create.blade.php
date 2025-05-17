@@ -38,11 +38,14 @@
                             <span class="file-name">No file chosen</span>
                         </div>
                     </div>
-
-                    <x-primary-button type="submit" class="mt-4">
-                        <span class="material-icons-outlined">save</span>
-                        Save Brand
-                    </x-primary-button>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-4 d-flex justify-content-center">
+                            <x-primary-button type="submit" class="mt-4">
+                                <span class="material-icons-outlined">save</span>
+                                Save Brand
+                            </x-primary-button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

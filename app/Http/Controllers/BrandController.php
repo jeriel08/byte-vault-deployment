@@ -20,7 +20,7 @@ class BrandController extends Controller
             })
             ->where('brandStatus', 'Active') // Align with POS logic
             ->orderBy('brandName')
-            ->paginate(10); // 10 brands per page
+            ->paginate(5); // 10 brands per page
 
         return view('admin.products.brands.index', compact('brands'));
     }

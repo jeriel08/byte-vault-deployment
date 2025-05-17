@@ -2,22 +2,31 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 USER root
 
+# Install wkhtmltopdf and dependencies
 RUN apk add --no-cache \
-    wkhtmltopdf \
     xvfb \
     ttf-dejavu \
     ttf-freefont \
-    fontconfig && \
-    rm -rf /var/cache/apk/*
+    fontconfig \
+    libxrender \
+    libxext \
+    && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox-0.12.6.1-3.alpine.3.16.x86_64.apk \
+    && apk add --allow-untrusted wkhtmltox-0.12.6.1-3.alpine.3.16.x86_64.apk \
+    && rm wkhtmltox-0.12.6.1-3.alpine.3.16.x86_64.apk \
+    && rm -rf /var/cache/apk/* \
+    && wkhtmltopdf --version
 
 # Increase PHP memory limit
 RUN echo "memory_limit = 256M" > /usr/local/etc/php/conf.d/memory-limit.ini
 
 COPY . .
 
-# Add Permssion Commands
-RUN chmod -R 775 /var/www/html/storage && \
-    chown -R www-data:www-data /var/www/html/storage
+# Install Composer dependencies
+RUN composer install --optimize-autoloader --no-dev --no-interaction || { echo "Composer install failed"; exit 1; }
+
+# Set storage and cache permissions
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache && \
+    chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Image config
 ENV SKIP_COMPOSER 1

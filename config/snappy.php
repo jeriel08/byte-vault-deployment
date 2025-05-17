@@ -35,10 +35,10 @@ return [
 
     'pdf' => [
         'enabled' => true,
-        'binary'  => env('WKHTMLTOPDF_PATH', '"C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe"'),
+        'binary' => env('WKHTMLTOPDF_PATH', '/usr/local/bin/wkhtmltopdf'),
         'timeout' => false,
-        'options' => [],
-        'env'     => [],
+        'options' => ['enable-local-file-access' => true],
+        'env' => [],
     ],
 
     'image' => [
