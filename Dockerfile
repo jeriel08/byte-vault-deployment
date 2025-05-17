@@ -6,10 +6,18 @@ RUN apk add --no-cache \
     wkhtmltopdf \
     xvfb \
     ttf-dejavu \
+    ttf-freefont \
     fontconfig && \
     rm -rf /var/cache/apk/*
 
+# Increase PHP memory limit
+RUN echo "memory_limit = 256M" > /usr/local/etc/php/conf.d/memory-limit.ini
+
 COPY . .
+
+# Add Permssion Commands
+RUN chmod -R 775 /var/www/html/storage && \
+    chown -R www-data:www-data /var/www/html/storage
 
 # Image config
 ENV SKIP_COMPOSER 1

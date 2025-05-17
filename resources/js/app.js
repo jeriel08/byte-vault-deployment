@@ -16,3 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+try {
+    localStorage.setItem("key", "value");
+} catch (e) {
+    console.error("Storage access denied:", e);
+}
