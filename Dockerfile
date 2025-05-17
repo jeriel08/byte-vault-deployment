@@ -1,5 +1,14 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
+USER root
+
+RUN apk add --no-cache \
+    wkhtmltopdf \
+    xvfb \
+    ttf-dejavu \
+    fontconfig && \
+    rm -rf /var/cache/apk/*
+
 COPY . .
 
 # Image config
